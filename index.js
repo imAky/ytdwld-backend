@@ -11,12 +11,7 @@ const app = express();
 // Middleware
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://y4youtube.vercel.app",
-    optionsSuccessStatus: 200,
-  })
-);
+app.use(cors());
 
 // Routes
 
