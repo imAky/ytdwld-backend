@@ -28,7 +28,7 @@ export const downloadVideo = async (req, res) => {
     ytdl(videoURL, { format: format }).pipe(res);
   } catch (error) {
     console.error("Error downloading video: ", error);
-    res.send(500).json({ error: `Failed to download vidoe ${error}` });
+    res.send(500).json({ error: `Failed to download vidoe - ${error}` });
   }
 };
 
