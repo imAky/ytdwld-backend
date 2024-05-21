@@ -28,7 +28,7 @@ export const downloadVideo = async (req, res) => {
     ytdl(videoURL, { format: format }).pipe(res);
   } catch (error) {
     console.error("Error downloading video: ", error);
-    res.send(500).json({ error: "Failed to download vidoe." });
+    res.send(500).json({ error: `Failed to download vidoe. ${error}` });
   }
 };
 
@@ -70,6 +70,6 @@ export const getvideoDetails = async (req, res) => {
     res.status(200).json(videoDetails);
   } catch (error) {
     console.error("Error fetching video Details: ", error);
-    res.status(500).json({ error: "Failed to fetch video details" });
+    res.status(500).json({ error: `Failed to fetch video details: ${error} ` });
   }
 };
